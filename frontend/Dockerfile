@@ -6,7 +6,7 @@ COPY ./frontend ./
 COPY ./frontend/.env.docker .env
 COPY ./packages /bookcars/packages
 RUN npm install --force
-RUN npm run build
+RUN npm run build -- --minify=false
 
 FROM nginx:stable-alpine
 WORKDIR /usr/share/nginx/html
